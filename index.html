@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lourdes Martins | Terapeuta Integrativa & Psicanalista Clínica</title>
+<meta name="description" content="Lourdes Martins — Terapeuta Integrativa e Psicanalista Clínica. Atendimento humanizado para adultos e crianças, presencial e online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -65,6 +65,10 @@ nav{
 .nav-cta{background:linear-gradient(135deg,var(--LD),var(--L))!important;color:#fff!important;padding:9px 20px;border-radius:100px;box-shadow:0 4px 14px var(--SL)}
 .nav-cta::after{display:none!important}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--SL)!important;color:#fff!important}
+#menu-btn{display:none;background:none;border:none;font-size:22px;color:var(--LD);cursor:pointer;padding:6px}
+#mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--W);border-bottom:1px solid rgba(155,123,184,.14);box-shadow:0 12px 24px var(--SL);z-index:998;flex-direction:column;padding:8px 0}
+#mobile-menu.open{display:flex}
+#mobile-menu a{padding:14px 28px;text-decoration:none;color:var(--S);font-size:12px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;transition:background .2s,color .2s}
 
 /* ══ HERO ══ */
 #hero{
@@ -94,7 +98,7 @@ h1 em{font-style:italic;color:var(--LD)}
 .pwrap{position:relative;width:350px;max-width:100%}
 .pwrap::before{content:'';position:absolute;top:-16px;right:-16px;width:100%;height:100%;border:1.5px solid var(--GL);border-radius:62% 38% 56% 44%;opacity:.45;animation:pframe 7s ease-in-out infinite}
 @keyframes pframe{0%,100%{transform:rotate(0deg)}50%{transform:rotate(4deg) scale(1.025)}}
-.pwrap img.photo{width:100%;border-radius:62% 38% 56% 44%;display:block;position:relative;z-index:1;box-shadow:0 22px 60px rgba(107,78,138,.22)}
+.pwrap img.photo{width:100%;border-radius:62% 38% 56% 44%;display:block;position:relative;z-index:1;box-shadow:0 22px 60px rgba(107,78,138,.22);object-fit:cover}
 .hcard{position:absolute;bottom:22px;left:-26px;z-index:3;background:#fff;border-radius:16px;padding:13px 19px;box-shadow:0 8px 26px var(--SL);border-left:3px solid var(--G)}
 .hcard strong{display:block;font-size:14px;color:var(--LD);font-weight:600}
 .hcard span{font-size:12px;color:var(--S);line-height:1.65}
@@ -210,14 +214,15 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
 /* ══ REVEAL ══ */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .rv.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .brand .logo-mark,.sobre-logo,.pwrap::before{animation:none}
+}
 
 /* ══ RESPONSIVE ══ */
-
 @media(max-width:860px){
-  #menu-btn{display:block!important}
+  #menu-btn{display:block}
   #mobile-menu a:hover{background:var(--LD);color:var(--GL)!important}
-}
-@media(max-width:860px){
   nav .nav-ul{display:none}
   nav{padding:0 18px}
   #hero{grid-template-columns:1fr;padding:88px 20px 56px 64px}
@@ -226,6 +231,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   #sobre{grid-template-columns:1fr;padding:66px 20px;gap:34px}
   .sgrid{grid-template-columns:1fr}
   .hgrid{grid-template-columns:1fr;gap:32px}
+  .haside{position:static}
   .pgrid{grid-template-columns:1fr}
   .cgrid{grid-template-columns:1fr}
   footer{padding:22px 18px;flex-direction:column;text-align:center}
@@ -234,7 +240,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
 </head>
 <body>
 
-<!-- ══ SIDEBAR ══ -->
+<!-- ===== SIDEBAR ===== -->
 <aside id="sb" aria-label="Navegação lateral">
   <a href="#hero"><span class="i">🏠</span><span class="t">Início</span></a><hr>
   <a href="#sobre"><span class="i">👤</span><span class="t">Sobre</span></a><hr>
@@ -247,7 +253,251 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   <a href="mailto:lourdes.terapeuta73@gmail.com" class="gold-link" rel="noopener"><span class="i">✉️</span><span class="t">E-mail</span></a>
 </aside>
 
-<!-- ══ NAV ══ -->
+<!-- ===== NAV ===== -->
 <nav>
   <a href="#hero" class="brand">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAZABkADASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAMEBQIBBv/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAvphQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5OkE9BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACragrN2MfT0mGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHmfo1qq6WTZ0vDAABDNDVGxzHtpDmAOK9WOeujiSmq4MnntCr6CQ7UuavjIghq31WsgQ89jrmXH06mGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGbmo8zUi0WsbTiYZAcecy1BQ1MnbY9jk5nnteqmjQ0aHOUedoUttLqKXBm6WXpNY5sRHBbAR5k6uTtf6m9ygl6QK1Td89QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDNBPVCvrZumh3l6eXoiGaCemTrZ9TWs/QAyc1vKk7k9GXqZlXJ4J4ZWrkaaUvHeQQBBSsxbaAwAZelk7aM/PWQjjrrM06CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4eovSQAAAEM3HlScdoyZ7WZ0bCpawimhmFW1EZ+rja+nVazQiPTo3gMmXpZW2hPXsZeY+tlaa/pgABny1b+0wwAr1O5NrgwUbuTpLcTRDxZFO3Xjq6MgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHPsB1zYVTi0R5757AAACGaCpxCtZVjXuKm2v1HJzPPRj6EE+1ivYZZWnFXq/zV7jmHQjqGzTuRxn6FWr4yAAx9bL09uxgI6zdHN1tPRhWqe2drQwAio2IdtEYDk6QyHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABydK1mggAAACHrynpoousu0XFWFaQlEAAIZoqlc9QB5Rvq47IAAAAAAAAAAAr1NNVWSX08rWqpBo5t6pI5KMVdejfoMhDVC7R1dPRhBFW0dO45WUE/NOrwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQvVa8uAEDk6445qXvN5rURyZKN5WM1+dMr3W6MnnY5ILNC/kEAPPRz0AAAAAAAAAAAAAAAAAEcgeZOvFolICGfeydLd3juAjLsdUOjZRS8zO0Ya9lIAAAAAAAAAAAA
+    <img src="img/logo-lourdes.png" alt="Lourdes Martins - Terapeuta Especialista">
+    <span>
+      <span class="brand-name">Lourdes Martins</span><br>
+      <span class="brand-sub">Terapeuta Integrativa</span>
+    </span>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#humanizar">Abordagem</a></li>
+    <li><a href="#publico">Atendimento</a></li>
+    <li><a href="#consultorio">Consultório</a></li>
+    <li><a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar sessão</a></li>
+  </ul>
+  <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+</nav>
+<div id="mobile-menu">
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#humanizar">Abordagem</a>
+  <a href="#publico">Atendimento</a>
+  <a href="#consultorio">Consultório</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hbg hbg1"></div>
+  <div class="hbg hbg2"></div>
+  <div class="hero-text">
+    <div class="eyebrow">Psicanálise & Terapia Integrativa</div>
+    <h1>Um espaço de <em>escuta</em><br>para você se reencontrar</h1>
+    <p class="tagline">"Cuidar da mente é um ato de coragem"</p>
+    <p class="hdesc">Atendimento psicanalítico e terapêutico para adultos e crianças, unindo técnica, acolhimento e presença. Sessões presenciais em Matipó/MG e online para todo o Brasil.</p>
+    <div class="badge"><span></span> CRP ativo · +12 anos de prática clínica</div>
+    <div class="hbtns">
+      <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="bp">Agendar minha sessão</a>
+      <a href="#sobre" class="bo">Conhecer o trabalho</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="pwrap">
+      <img class="photo" src="img/foto-lourdes.png" alt="Lourdes Martins, terapeuta integrativa e psicanalista clínica">
+      <div class="hcard">
+        <strong>+800 sessões</strong>
+        <span>conduzidas com cuidado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="rv">
+  <div class="sleft">
+    <img class="sobre-logo" src="img/logo-lourdes.png" alt="Logo Lourdes Martins Terapeuta Especialista">
+    <div class="sg">
+      <div class="sc"><div class="sn">12+</div><div class="sl">Anos de clínica</div></div>
+      <div class="sc"><div class="sn">800+</div><div class="sl">Sessões</div></div>
+      <div class="sc"><div class="sn">2</div><div class="sl">Formações</div></div>
+      <div class="sc"><div class="sn">100%</div><div class="sl">Sigilo ético</div></div>
+    </div>
+  </div>
+  <div class="sobre-text">
+    <div class="eye">Sobre mim</div>
+    <h2>Uma escuta <em>construída</em> com técnica e afeto</h2>
+    <p>Sou Lourdes Martins, psicanalista clínica e terapeuta integrativa. Ao longo de mais de uma década de prática, desenvolvi uma abordagem que une o rigor da escuta psicanalítica às ferramentas da terapia integrativa, sempre respeitando o tempo e a singularidade de cada pessoa.</p>
+    <p>Acredito que todo processo terapêutico começa por um vínculo de confiança. Por isso, meu consultório é pensado como um espaço seguro, sem julgamentos, onde cada história pode ser dita — e ouvida — com respeito.</p>
+    <div class="cbos">
+      <div class="crow"><span class="ctag">Formação</span> Psicanálise Clínica</div>
+      <div class="crow"><span class="ctag">Formação</span> Terapia Integrativa</div>
+      <div class="crow"><span class="ctag">Registro</span> CRP em situação regular</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="servicos" class="rv">
+  <div class="eye">O que ofereço</div>
+  <h2>Serviços pensados para <em>cada</em> momento da sua vida</h2>
+  <p class="ssub">Cada processo terapêutico é único. Por isso, adapto a abordagem às necessidades, ao ritmo e aos objetivos de quem chega até mim.</p>
+  <div class="sgrid">
+    <div class="scard">
+      <div class="si">🧠</div>
+      <div class="st">Psicanálise Clínica</div>
+      <div class="sd">Sessões individuais para adultos, com escuta aprofundada dos conflitos internos, padrões repetitivos e história de vida.</div>
+    </div>
+    <div class="scard">
+      <div class="si">🌿</div>
+      <div class="st">Terapia Integrativa</div>
+      <div class="sd">Abordagem que combina diferentes recursos terapêuticos, olhando para a pessoa de forma completa — corpo, mente e emoções.</div>
+    </div>
+    <div class="scard">
+      <div class="si">🧒</div>
+      <div class="st">Atendimento Infantil</div>
+      <div class="sd">Escuta lúdica e acolhedora para crianças, com orientação contínua aos pais sobre o processo terapêutico.</div>
+    </div>
+    <div class="scard">
+      <div class="si">💬</div>
+      <div class="st">Terapia de Casal</div>
+      <div class="sd">Mediação de conflitos, comunicação e reconstrução de vínculos, com sessões conjuntas e individuais quando necessário.</div>
+    </div>
+    <div class="scard">
+      <div class="si">🕊️</div>
+      <div class="st">Ansiedade & Luto</div>
+      <div class="sd">Acompanhamento especializado em processos de ansiedade, perdas e transições de vida significativas.</div>
+    </div>
+    <div class="scard">
+      <div class="si">💻</div>
+      <div class="st">Atendimento Online</div>
+      <div class="sd">Sessões por videochamada com a mesma qualidade e sigilo do atendimento presencial, para todo o Brasil.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HUMANIZAR ===== -->
+<section id="humanizar" class="rv">
+  <div class="eye">Minha abordagem</div>
+  <h2>Terapia é <em>humanizar</em> antes de tratar</h2>
+  <div class="hgrid">
+    <div>
+      <p class="hi">Antes de qualquer técnica, existe uma pessoa. Meu trabalho começa por reconhecer a história, o contexto e o tempo de cada paciente — só depois disso a teoria entra em cena, a serviço do que a pessoa realmente precisa.</p>
+      <ul class="hlist">
+        <li>Escuta sem julgamento, no ritmo de cada paciente</li>
+        <li>Sigilo absoluto sobre tudo o que é compartilhado</li>
+        <li>Diálogo aberto sobre o processo terapêutico</li>
+        <li>Flexibilidade entre abordagens conforme a necessidade</li>
+        <li>Acompanhamento contínuo, sem fórmulas prontas</li>
+      </ul>
+      <div class="cloud">
+        <span class="ctg">Ansiedade</span>
+        <span class="ctg">Autoestima</span>
+        <span class="ctg">Relacionamentos</span>
+        <span class="ctg">Luto</span>
+        <span class="ctg">Transições de vida</span>
+        <span class="ctg">Autoconhecimento</span>
+      </div>
+    </div>
+    <aside class="haside">
+      <h3>Como funciona o processo</h3>
+      <div class="hb"><span class="hbd"></span> Primeira conversa de acolhimento</div>
+      <div class="hb"><span class="hbd"></span> Construção conjunta dos objetivos</div>
+      <div class="hb"><span class="hbd"></span> Sessões semanais ou quinzenais</div>
+      <div class="hb"><span class="hbd"></span> Avaliações periódicas do processo</div>
+      <div class="hb"><span class="hbd"></span> Encerramento no tempo certo</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== PÚBLICO ===== -->
+<section id="publico" class="rv">
+  <div class="eye">Para quem é</div>
+  <h2>Atendimento para <em>cada</em> fase da vida</h2>
+  <div class="pgrid">
+    <div class="pcard adulto">
+      <span class="pe">🧑</span>
+      <div class="pt">Adultos</div>
+      <p class="pd">Processos individuais voltados a ansiedade, autoconhecimento, relacionamentos e momentos de transição — com sessões presenciais ou online.</p>
+    </div>
+    <div class="pcard infantil">
+      <span class="pe">🧒</span>
+      <div class="pt">Crianças</div>
+      <p class="pd">Escuta lúdica adaptada à idade, com orientação constante aos responsáveis sobre o desenvolvimento e o andamento do processo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONSULTÓRIO ===== -->
+<section id="consultorio" class="rv">
+  <div class="eye">Onde estou</div>
+  <h2>Consultório e <em>contato</em></h2>
+  <div class="cgrid">
+    <div>
+      <div class="icard">
+        <h3>Endereço & horários</h3>
+        <div class="irow"><span class="ii">📍</span> Av. João Mendes Magalhães, nº 206 — 2º andar, Centro, Matipó/MG — CEP 35367-000</div>
+        <div class="irow"><span class="ii">🕐</span> Segunda a sexta, das 8h às 19h</div>
+        <div class="irow"><span class="ii">💻</span> Atendimento online para todo o Brasil</div>
+      </div>
+      <div class="icard">
+        <h3>Fale comigo</h3>
+        <div class="irow"><span class="ii">📱</span> <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer">(11) 94581-1633</a></div>
+        <div class="irow"><span class="ii">✉️</span> <a href="mailto:lourdes.terapeuta73@gmail.com">lourdes.terapeuta73@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="mbox">
+      <span class="mico">📅</span>
+      <p>Vagas limitadas por mês</p>
+      <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="mbtn">Agendar avaliação</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato" class="rv">
+  <div class="eye">Vamos conversar</div>
+  <h2>O primeiro passo é <em>marcar</em> uma conversa</h2>
+  <p class="cdesc">Entre em contato para agendar uma sessão de acolhimento, tirar dúvidas sobre o processo ou saber mais sobre a abordagem.</p>
+  <div class="cbtns">
+    <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="cbtn wa"><span class="cico">📱</span> WhatsApp</a>
+    <a href="mailto:lourdes.terapeuta73@gmail.com" class="cbtn em"><span class="cico">✉️</span> E-mail</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="cbtn ig"><span class="cico">📷</span> Instagram</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="flogo">
+    <img src="img/logo-lourdes.png" alt="Logo Lourdes Martins">
+    <span>Lourdes Martins</span>
+  </div>
+  <div class="fcopy">© 2026 Lourdes Martins — Terapeuta Integrativa & Psicanalista Clínica.<br>Todos os direitos reservados.</div>
+</footer>
+
+<!-- ===== BOTÕES FLUTUANTES ===== -->
+<div id="floaters">
+  <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="fb wa">📱 WhatsApp</a>
+  <a href="mailto:lourdes.terapeuta73@gmail.com" class="fb em">✉️ E-mail</a>
+</div>
+
+<script>
+// Reveal on scroll
+const rv = document.querySelectorAll('.rv');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+},{threshold:.12});
+rv.forEach(el=>io.observe(el));
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', ()=>{
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.textContent = open ? '✕' : '☰';
+});
+mobileMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    mobileMenu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.textContent = '☰';
+  });
+});
+</script>
+</body>
+</html>
