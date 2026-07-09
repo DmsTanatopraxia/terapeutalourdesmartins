@@ -219,6 +219,18 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   .brand .logo-mark,.sobre-logo,.pwrap::before{animation:none}
 }
 
+/* ══ DEPOIMENTOS ══ */
+#depoimentos{background:var(--LP)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.dcard{background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 6px 24px var(--SL);display:flex;flex-direction:column;gap:14px}
+.dstars{color:var(--G);font-size:14px;letter-spacing:2px}
+.dquote{font-size:14px;line-height:1.85;color:var(--T);font-style:italic}
+.dwho{display:flex;align-items:center;gap:11px;margin-top:auto}
+.davatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--LD),var(--L));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;flex-shrink:0}
+.dname{font-size:13px;font-weight:600;color:var(--LD)}
+.drole{font-size:11.5px;color:var(--S)}
+@media(max-width:860px){.dgrid{grid-template-columns:1fr}}
+
 /* ══ RESPONSIVE ══ */
 @media(max-width:860px){
   #menu-btn{display:block}
@@ -247,10 +259,11 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   <a href="#servicos"><span class="i">✨</span><span class="t">Serviços</span></a><hr>
   <a href="#humanizar"><span class="i">🌿</span><span class="t">Humanizar</span></a><hr>
   <a href="#publico"><span class="i">💛</span><span class="t">Atendimento</span></a><hr>
+  <a href="#depoimentos"><span class="i">⭐</span><span class="t">Depoimentos</span></a><hr>
   <a href="#consultorio"><span class="i">📍</span><span class="t">Consultório</span></a><hr>
   <a href="#parceria"><span class="i">🤝</span><span class="t">Parceria</span></a><hr>
   <a href="#contato"><span class="i">📩</span><span class="t">Contato</span></a><hr>
-  <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="gold-link"><span class="i">📱</span><span class="t">WhatsApp</span></a><hr>
+  <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="gold-link"><span class="i">📱</span><span class="t">WhatsApp</span></a><hr>
   <a href="mailto:lourdes.terapeuta73@gmail.com" class="gold-link" rel="noopener"><span class="i">✉️</span><span class="t">E-mail</span></a>
 </aside>
 
@@ -268,9 +281,10 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#humanizar">Abordagem</a></li>
     <li><a href="#publico">Atendimento</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
     <li><a href="#consultorio">Consultório</a></li>
     <li><a href="#parceria">Parceria</a></li>
-    <li><a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar sessão</a></li>
+    <li><a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar sessão</a></li>
   </ul>
   <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
 </nav>
@@ -279,6 +293,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   <a href="#servicos">Serviços</a>
   <a href="#humanizar">Abordagem</a>
   <a href="#publico">Atendimento</a>
+  <a href="#depoimentos">Depoimentos</a>
   <a href="#consultorio">Consultório</a>
   <a href="#parceria">Parceria</a>
   <a href="#contato">Contato</a>
@@ -295,7 +310,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
     <p class="hdesc">Atendimento psicanalítico e terapêutico para adultos e crianças, unindo técnica, acolhimento e presença. Sessões presenciais em Matipó/MG e online para todo o Brasil.</p>
     <div class="badge"><span></span> CRP ativo · +12 anos de prática clínica</div>
     <div class="hbtns">
-      <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="bp">Agendar minha sessão</a>
+      <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="bp">Agendar minha sessão</a>
       <a href="#sobre" class="bo">Conhecer o trabalho</a>
     </div>
   </div>
@@ -425,6 +440,39 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   </div>
 </section>
 
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos" class="rv">
+  <div class="eye">Depoimentos</div>
+  <h2>O que nossos <em>pacientes</em> dizem</h2>
+  <p style="font-size:15px;line-height:1.87;color:var(--S);max-width:560px">Conheça as histórias de quem confia em nosso trabalho para cuidar da saúde. Feedbacks que mostram nosso compromisso com a qualidade e o atendimento humanizado.</p>
+  <div class="dgrid">
+    <div class="dcard">
+      <div class="dstars">★★★★★</div>
+      <p class="dquote">"A Lourdes me ajudou a lidar com uma fase muito difícil da minha vida. Me senti acolhida desde a primeira sessão."</p>
+      <div class="dwho">
+        <div class="davatar">M</div>
+        <div><div class="dname">Mariana C.</div><div class="drole">Paciente há 8 meses</div></div>
+      </div>
+    </div>
+    <div class="dcard">
+      <div class="dstars">★★★★★</div>
+      <p class="dquote">"Processo de terapia sério e humano. Recomendo para quem busca autoconhecimento de verdade."</p>
+      <div class="dwho">
+        <div class="davatar">R</div>
+        <div><div class="dname">Rafael S.</div><div class="drole">Paciente há 1 ano</div></div>
+      </div>
+    </div>
+    <div class="dcard">
+      <div class="dstars">★★★★★</div>
+      <p class="dquote">"Minha filha se sentiu muito à vontade nas sessões. O acompanhamento com a gente também fez toda diferença."</p>
+      <div class="dwho">
+        <div class="davatar">C</div>
+        <div><div class="dname">Camila R.</div><div class="drole">Mãe de paciente</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONSULTÓRIO ===== -->
 <section id="consultorio" class="rv">
   <div class="eye">Onde estou</div>
@@ -439,14 +487,14 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
       </div>
       <div class="icard">
         <h3>Fale comigo</h3>
-        <div class="irow"><span class="ii">📱</span> <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer">(11) 94581-1633</a></div>
+        <div class="irow"><span class="ii">📱</span> <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer">(11) 94581-1633</a></div>
         <div class="irow"><span class="ii">✉️</span> <a href="mailto:lourdes.terapeuta73@gmail.com">lourdes.terapeuta73@gmail.com</a></div>
       </div>
     </div>
     <div class="mbox">
       <span class="mico">📅</span>
       <p>Vagas limitadas por mês</p>
-      <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="mbtn">Agendar avaliação</a>
+      <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="mbtn">Agendar avaliação</a>
     </div>
   </div>
 </section>
@@ -468,7 +516,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
   <h2>O primeiro passo é <em>marcar</em> uma conversa</h2>
   <p class="cdesc">Entre em contato para agendar uma sessão de acolhimento, tirar dúvidas sobre o processo ou saber mais sobre a abordagem.</p>
   <div class="cbtns">
-    <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="cbtn wa"><span class="cico">📱</span> WhatsApp</a>
+    <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="cbtn wa"><span class="cico">📱</span> WhatsApp</a>
     <a href="mailto:lourdes.terapeuta73@gmail.com" class="cbtn em"><span class="cico">✉️</span> E-mail</a>
     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="cbtn ig"><span class="cico">📷</span> Instagram</a>
   </div>
@@ -485,7 +533,7 @@ footer{background:#100820;padding:30px 52px;display:flex;align-items:center;just
 
 <!-- ===== BOTÕES FLUTUANTES ===== -->
 <div id="floaters">
-  <a href="https://wa.me/5511945811633" target="_blank" rel="noopener noreferrer" class="fb wa">📱 WhatsApp</a>
+  <a href="https://wa.me/5511945811633?text=Ol%C3%A1%2C%20Lourdes%21%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20terapia." target="_blank" rel="noopener noreferrer" class="fb wa">📱 WhatsApp</a>
   <a href="mailto:lourdes.terapeuta73@gmail.com" class="fb em">✉️ E-mail</a>
 </div>
 
